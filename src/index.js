@@ -1,17 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import faker from 'faker';
+import CommentDetails from './CommentDetails'
+import ApprovalCard from './ApprovalCard';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+
+
+const App = () => {
+    return (<div className="ui container comments">
+        <br />
+        <ApprovalCard>
+            <CommentDetails author="Saim" dated="Today at 7:00 pm" tt="Nice Post Dear" avatar={faker.image.avatar()} />
+        </ApprovalCard>
+        
+        <ApprovalCard>
+            <CommentDetails author="Dawar" dated="Yesterday at 9:00 pm" tt="Fantastic" avatar={faker.image.avatar()} />
+        </ApprovalCard>
+        
+        <ApprovalCard>
+            <CommentDetails author="Mikeal" dated="Today at 8:00 pm" tt="Aamzing" avatar={faker.image.avatar()} />
+        </ApprovalCard>
+        
+        <ApprovalCard>
+            <CommentDetails author="Yahya" dated="Today at 7:00 pm" tt="Wow" avatar={faker.image.avatar()} />
+        </ApprovalCard>
+        
+        <ApprovalCard>
+            <CommentDetails author="Bazib" dated="Today at 7:00 pm" tt="Adorabe" avatar={faker.image.avatar()} />
+        </ApprovalCard>
+        
+    </div>
+        
+        
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+}
+
+ReactDOM.render(<App />, document.querySelector('#root'));
